@@ -3,14 +3,20 @@ require 'rails_helper'
 describe "Schedule" do
   context "has" do
     it "appointments" do
-      schedule = Schedule.new
+      schedule = Schedule.new("name1")
 
       expect(schedule.appts).to eq([])
     end
+
+    it "a name" do 
+      schedule = Schedule.new("name1")
+
+      expect(schedule.name).to eq("name1")
+    end 
   end
   context "can" do
     it 'create appointments' do
-      schedule = Schedule.new
+      schedule = Schedule.new("name1")
 
       expect(schedule.appts.length).to eq(0)  
 
@@ -21,7 +27,7 @@ describe "Schedule" do
     end
 
     it 'read appointments' do
-      schedule = Schedule.new
+      schedule = Schedule.new("name1")
 
       expect(schedule.appts.length).to eq(0)  
 
@@ -32,7 +38,7 @@ describe "Schedule" do
     end
 
     it 'delete appointments' do 
-      schedule = Schedule.new
+      schedule = Schedule.new("name1")
 
       schedule.add_appt(5, 10)
       schedule.add_appt(11, 12)
@@ -45,7 +51,7 @@ describe "Schedule" do
     end 
 
     it 'render error if deleted appt not found' do 
-      schedule = Schedule.new
+      schedule = Schedule.new("name1")
 
       schedule.add_appt(5, 10)
       schedule.add_appt(11, 12)
