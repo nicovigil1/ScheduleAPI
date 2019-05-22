@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe "Appointment" do
-  context "have attributes" do
-    it "has a start and end time" do
+describe "Appointments" do
+  context "have" do
+    it "a start and end time" do
       start_time = 5
       end_time = 10
       appt = Appointment.new(start_time, end_time)

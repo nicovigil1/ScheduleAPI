@@ -42,6 +42,7 @@ describe "Schedule" do
 
       schedule.add_appt(5, 10)
       schedule.add_appt(11, 12)
+
       expect(schedule.appts.length).to eq(2)  
       
       schedule.del_appt(5)
@@ -62,5 +63,21 @@ describe "Schedule" do
       expect(schedule.appts.length).to eq(2)  
     end 
   end
-  
+
+  context 'can validate' do 
+    it 'start time is smaller than end time' do
+      schedule = Schedule.new("name1")
+
+      expect(schedule.add_appt(10, 5)).to eq("start time must be smaller than endtime")
+      expect(schedule.appts).to eq([])
+    end
+
+    it 'schedules dont overlap' do 
+      schedule = Schedule.new("name1")
+
+      schedule.add_appt(1, 5)
+
+      expect(schedule.add_appt(3, 6)).to eq("Appointments cannot overlap")
+    end 
+  end 
 end
