@@ -13,6 +13,8 @@ context "CRUD schedules" do
     post '/api/v1/schedules?name=schedule1'
     post '/api/v1/schedules?name=schedule2'
     
+    get '/api/v1/schedules'
+
     res = JSON.parse(response.body)
     
     expect(res.length).to eq(2)
