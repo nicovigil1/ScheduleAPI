@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::API
-
-  def manager
-    @manager ||= Manager.new
+  include ActionController::Helpers
+  helper_method :manager
+  
+  def manager 
+    session[:manager] ||= Manager.new
   end 
 end

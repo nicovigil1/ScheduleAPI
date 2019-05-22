@@ -16,7 +16,7 @@ context "CRUD schedules" do
     get '/api/v1/schedules'
 
     res = JSON.parse(response.body)
-    
+
     expect(res.length).to eq(2)
   end 
 end
