@@ -1,8 +1,9 @@
 class Schedule
-  attr_reader :appts
+  attr_reader :appts, :name
   
-  def initialize
+  def initialize(name)
     @appts = []
+    @name = name
   end
 
   def add_appt(start_time, end_time)
