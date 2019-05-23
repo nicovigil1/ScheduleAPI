@@ -16,6 +16,14 @@ class Manager
   end
 
   def find_schedule(name)
-    schedule = @schedules.find {|schedule| schedule.name == name}
+    @schedules.find {|schedule| schedule.name == name}
   end
+
+  def all_appts
+    appts = []
+    @schedules.each do |schedule|
+      appts << schedule.appts
+    end
+    appts.flatten.sort_by {|appt| appt.start }
+  end 
 end 

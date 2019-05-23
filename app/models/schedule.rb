@@ -20,7 +20,7 @@ class Schedule
 
   def del_appt(start_time)
     new_appts = @appts.reject! {|appt| appt.start == start_time}
-    "appointment not found" if new_appts == nil
+    new_appts == nil ? "appointment not found" : new_appts
   end
 
   def overlap?(start_time, end_time)
