@@ -10,6 +10,7 @@ class Schedule
     if start_time < end_time && !overlap?(start_time, end_time)
       appt = Appointment.new(start_time, end_time)
       @appts << appt
+      @appts = @appts.sort_by {|appt| appt.start}
     elsif overlap?(start_time, end_time)
       "Appointments cannot overlap"
     else

@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Endpoints 
 
-Things you may want to cover:
+```
+post /api/v1/schedules?name=EXAMPLE
+```
+returns a list of all current schedules
 
-* Ruby version
+<br>
 
-* System dependencies
+```
+get /api/v1/schedules
+```
+returns a list of all schedules currently available
 
-* Configuration
+<br>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+delete /api/v1/schedules/:name
+```
+returns a list of all current schedules post deletion
