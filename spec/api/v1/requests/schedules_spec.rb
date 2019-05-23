@@ -19,4 +19,15 @@ context "CRUD schedules" do
 
     expect(res.length).to eq(2)
   end 
+
+  it 'can delete a schedule' do 
+    post '/api/v1/schedules?name=schedule1'
+    post '/api/v1/schedules?name=schedule2'
+    
+    delete '/api/v1/schedules?name=schedule1'
+
+    res = JSON.parse(response.body)
+
+    expect(res.length).to eq(1)
+  end 
 end

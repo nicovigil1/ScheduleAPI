@@ -8,5 +8,8 @@ class Api::V1::SchedulesController < ApplicationController
     render json: manager.schedules
   end
 
-
+  def destroy
+    render json: manager.delete_schedule(params[:name])
+  end 
+  
 end 

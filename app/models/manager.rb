@@ -12,6 +12,6 @@ class Manager
 
   def delete_schedule(name)
     new_schedules = @schedules.reject! {|schedule| schedule.name == name}
-    "schedule not found" if new_schedules == nil
+    new_schedules == nil ? "schedule not found" : @schedules
   end 
 end 
