@@ -1,1 +1,1 @@
-Rails.application.config.session_store :cache_store, key: '_ScheduleAPI_session'
+Rails.application.config.session_store :CookieStore, key: '_ScheduleAPI_session'
