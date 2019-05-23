@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 class Api::V1::AppointmentsController < ApplicationController
   def create
     schedule = manager.find_schedule(params[:schedule_name])
