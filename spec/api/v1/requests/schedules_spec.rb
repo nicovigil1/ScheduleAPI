@@ -30,4 +30,16 @@ context "CRUD schedules" do
 
     expect(res.length).to eq(1)
   end 
+
+  it 'can show a schedules appointments' do 
+    post '/api/v1/schedules?name=schedule1'
+    post '/api/v1/schedules?name=schedule2'
+    
+    get '/api/v1/schedules/schedule1'
+
+    res = JSON.parse(response.body)
+
+    expect(res["data"]["type"]).to eq("schedule")
+    expect(res["data"]["id"]).to be_truthy
+  end 
 end

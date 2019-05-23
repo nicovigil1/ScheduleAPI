@@ -37,6 +37,14 @@ describe "Manager" do
 
       expect(manager.schedules.length).to eq(1)
     end 
+
+    it 'can find and return a schedule' do 
+      manager = Manager.new
+
+      manager.add_schedule("name1")
+
+      expect(manager.find_schedule("name1").class).to eq(Schedule)
+    end 
   end
   
 end
